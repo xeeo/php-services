@@ -1,0 +1,34 @@
+<?php
+
+/** @var \Xeeo\Services\Paginator\PaginatorApi $this */
+
+$this->getNextPage();
+
+echo "\n Last Page : " . $this->getLastPage();
+echo "\n Current Page : " . $this->getCurrentPage();
+echo "\n Page Cursor : " . $this->getPage();
+echo "\n Next Page :" . $this->getNextPage();
+echo "\n Current Page :" . $this->getCurrentPage();
+echo "\n Page Cursor : " . $this->getPage();
+echo "\n Previous Page :" . $this->getPreviousPage();
+echo "\n Current Page :" . $this->getCurrentPage();
+echo "\n Page Cursor : " . $this->getPage();
+
+echo "\n Last Page URL : " . $this->getLastPageUrl();
+echo "\n Current Page URL : " . $this->getCurrentPageUrl();
+echo "\n Next Page URL :" . $this->getNextPageUrl();
+echo "\n Previous Page URL :" . $this->getPreviousPageUrl();
+
+echo "\n \n";
+
+$this->reset();
+
+echo "page : " . $this->getPage() . " with URL: " . $this->getPageUrl();
+echo "\n";
+
+while ($this->isNextPageAvailable()) {
+    $this->nextPage();
+
+    echo "page : " . $this->getPage() . " with URL: " . $this->getPageUrl();
+    echo "\n";
+}
